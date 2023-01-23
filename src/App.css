@@ -1,0 +1,134 @@
+* {
+  --colorBlack : #0c0e0c;
+  --colorRed: #d8323c;
+  --colorWhite: #eaebea;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--colorBlack);
+}
+
+#drum-machine {
+  display: flex;
+  width: 80%;
+  max-width: 800px;
+  height: 65%;
+  flex-direction: column;
+  padding: 1rem 1rem 1rem 1rem;
+  text-align: center;
+  align-items: center;
+  border: 2px solid var(--colorRed);
+  box-shadow: 0 0 1rem var(--colorRed);
+  border-radius: 0.3rem;
+}
+
+#title {
+  color: var(--colorWhite);
+  padding-bottom: .7rem;
+  font-size: 2.7rem;
+}
+
+#display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  width: 85%;
+  height: 40%;
+  padding: 1rem 1rem 1rem 1rem;
+  border: 2px solid var(--colorRed);
+  border-radius: 0.3rem;
+  color: var(--colorWhite);
+}
+
+.pad-bank {
+  padding-top: 1.4rem;
+  text-align: center;
+  border: 2px solid var(--colorRed);
+  color: var(--colorWhite);
+  cursor: pointer;
+}
+.pad-bank-active {
+  pointer-events: none;
+}
+.pad-bank:active{
+  background-color: rgba(255, 255, 255, 0.13);
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: .2rem;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--colorRed);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--colorRed);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.powertext {
+  color: var(--colorWhite);
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 1rem;
+}
+.DisplayKit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 7%;
+  color: var(--colorWhite);
+  margin-top: 1rem;
+  border: 2px solid var(--colorRed);
+  font-weight: 600;
+}
+.slider2Div{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  color: var(--colorRed);
+}
